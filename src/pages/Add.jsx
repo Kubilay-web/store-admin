@@ -136,7 +136,7 @@ const Add = ({token}) => {
             </div>
 
             <div onClick={()=>setCurrencys(prev => prev.includes("£") ? prev.filter( item => item !== "£") : [...prev,"£"])}>
-              <p className={`${currencys.includes("sterlin") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>£</p>
+              <p className={`${currencys.includes("£") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>£</p>
             </div>
 
             {/* <div onClick={()=>setSizes(prev => prev.includes("XL") ? prev.filter( item => item !== "XL") : [...prev,"XL"])}>
