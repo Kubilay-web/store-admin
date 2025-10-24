@@ -127,15 +127,15 @@ const Add = ({token}) => {
         <div>
           <p className='mb-2'>Currency</p>
           <div className='flex gap-3'>
-            <div onClick={()=>setCurrencys(prev => prev.includes("euro") ? prev.filter( item => item !== "euro") : [...prev,"euro"])}>
-              <p className={`${currencys.includes("euro") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>€</p>
+            <div onClick={()=>setCurrencys(prev => prev.includes("€") ? prev.filter( item => item !== "€") : [...prev,"€"])}>
+              <p className={`${currencys.includes("€") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>€</p>
             </div>
             
-            <div onClick={()=>setCurrencys(prev => prev.includes("dollar") ? prev.filter( item => item !== "dollar") : [...prev,"dollar"])}>
-              <p className={`${currencys.includes("dollar") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>$</p>
+            <div onClick={()=>setCurrencys(prev => prev.includes("$") ? prev.filter( item => item !== "$") : [...prev,"$"])}>
+              <p className={`${currencys.includes("$") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>$</p>
             </div>
 
-            <div onClick={()=>setCurrencys(prev => prev.includes("sterlin") ? prev.filter( item => item !== "sterlin") : [...prev,"sterlin"])}>
+            <div onClick={()=>setCurrencys(prev => prev.includes("£") ? prev.filter( item => item !== "£") : [...prev,"£"])}>
               <p className={`${currencys.includes("sterlin") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>£</p>
             </div>
 
