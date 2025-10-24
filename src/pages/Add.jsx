@@ -17,7 +17,8 @@ const Add = ({token}) => {
    const [category, setCategory] = useState("Men");
    const [subCategory, setSubCategory] = useState("Topwear");
    const [bestseller, setBestseller] = useState(false);
-   const [sizes, setSizes] = useState([]);
+   const [currencys, setCurrencys] = useState([]);
+
 
    const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -32,7 +33,7 @@ const Add = ({token}) => {
       formData.append("category",category)
       formData.append("subCategory",subCategory)
       formData.append("bestseller",bestseller)
-      formData.append("sizes",JSON.stringify(sizes))
+      formData.append("currencys",JSON.stringify(currencys))
 
       image1 && formData.append("image1",image1)
       image2 && formData.append("image2",image2)
@@ -59,7 +60,8 @@ const Add = ({token}) => {
       toast.error(error.message)
     }
    }
-
+   console.log('currencys',currencys);
+   
   return (
     <form onSubmit={onSubmitHandler} className='flex flex-col w-full items-start gap-3'>
         <div>
@@ -123,27 +125,27 @@ const Add = ({token}) => {
         </div>
 
         <div>
-          <p className='mb-2'>Product Sizes</p>
+          <p className='mb-2'>Currency</p>
           <div className='flex gap-3'>
-            <div onClick={()=>setSizes(prev => prev.includes("S") ? prev.filter( item => item !== "S") : [...prev,"S"])}>
-              <p className={`${sizes.includes("S") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>S</p>
+            <div onClick={()=>setCurrencys(prev => prev.includes("euro") ? prev.filter( item => item !== "euro") : [...prev,"euro"])}>
+              <p className={`${currencys.includes("euro") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>€</p>
             </div>
             
-            <div onClick={()=>setSizes(prev => prev.includes("M") ? prev.filter( item => item !== "M") : [...prev,"M"])}>
-              <p className={`${sizes.includes("M") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>M</p>
+            <div onClick={()=>setCurrencys(prev => prev.includes("dollar") ? prev.filter( item => item !== "dollar") : [...prev,"dollar"])}>
+              <p className={`${currencys.includes("dollar") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>$</p>
             </div>
 
-            <div onClick={()=>setSizes(prev => prev.includes("L") ? prev.filter( item => item !== "L") : [...prev,"L"])}>
-              <p className={`${sizes.includes("L") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>L</p>
+            <div onClick={()=>setCurrencys(prev => prev.includes("sterlin") ? prev.filter( item => item !== "sterlin") : [...prev,"sterlin"])}>
+              <p className={`${currencys.includes("sterlin") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>£</p>
             </div>
 
-            <div onClick={()=>setSizes(prev => prev.includes("XL") ? prev.filter( item => item !== "XL") : [...prev,"XL"])}>
+            {/* <div onClick={()=>setSizes(prev => prev.includes("XL") ? prev.filter( item => item !== "XL") : [...prev,"XL"])}>
               <p className={`${sizes.includes("XL") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>XL</p>
             </div>
 
             <div onClick={()=>setSizes(prev => prev.includes("XXL") ? prev.filter( item => item !== "XXL") : [...prev,"XXL"])}>
               <p className={`${sizes.includes("XXL") ? "bg-pink-100" : "bg-slate-200" } px-3 py-1 cursor-pointer`}>XXL</p>
-            </div>
+            </div> */}
           </div>
         </div>
 
